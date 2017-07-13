@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>mask</title>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script src="http://ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
+<style>
+body {
+	padding: 50px 100px;
+}
+.demolist {
+	width: 300px;
+	height: 300px;
+	float: left;
+	text-align: center;
+	box-shadow: 0px 0px 5px #D1CFCF;
+	margin: 10px;
+}
+.desc {
+	padding: 30px 10px;
+}
+#logo-01:hover {
+	animation: maskit 1.5s;
+}
+ @keyframes maskit {
+0% {
+-webkit-mask-image: -webkit-gradient(radial, 17 17, 0, 17 17, 0, from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)));
+}
+10% {
+-webkit-mask-image: -webkit-gradient(radial, 17 17, 2, 17 17, 10, from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)));
+}
+20% {
+-webkit-mask-image: -webkit-gradient(radial, 17 17, 4, 17 17, 15, from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)));
+}
+30% {
+-webkit-mask-image: -webkit-gradient(radial, 17 17, 10, 17 17, 20, from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)));
+}
+40% {
+-webkit-mask-image: -webkit-gradient(radial, 17 17, 20, 17 17, 35, from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)));
+}
+50% {
+-webkit-mask-image: -webkit-gradient(radial, 17 17, 40, 17 17, 65, from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)));
+}
+60% {
+-webkit-mask-image: -webkit-gradient(radial, 17 17, 60, 17 17, 75, from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)));
+}
+70% {
+-webkit-mask-image: -webkit-gradient(radial, 17 17, 70, 17 17, 85, from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)));
+}
+80% {
+-webkit-mask-image: -webkit-gradient(radial, 17 17, 80, 17 17, 95, from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)));
+}
+90% {
+-webkit-mask-image: -webkit-gradient(radial, 17 17, 90, 17 17, 105, from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)));
+}
+100% {
+-webkit-mask-image: -webkit-gradient(radial, 17 17, 100, 17 17, 115, from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)));
+}
+}
+
+
+</style>
+</head>
+
+<body>
+<a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">google的原mask效果这里查看，</a>原效果非常牛逼闪闪；下面列举几种实现方法，右击可查看代码！<br>
+<br>
+<br>
+<div class="demolist">
+  <h3>css-animation实现</h3>
+  <img src="chrome_logo_2x.png" alt="Chrome" width="123" height="40" id="logo-01" class="logo" >
+  <div class="desc">这种方法很土,很笨，一帧一帧罗列,实现的非常不完美，性能也很低下,主要代码会显得丢人。</div>
+</div>
+<div class="demolist">
+  <h3>js实现</h3>
+  <img src="chrome_logo_2x.png" alt="Chrome" width="123" height="40" id="logo-02" class="logo" onMouseOver="maskanimation()" >
+  <div class="desc">不用库当然能实现，对比代码几乎一样多，有必要用库么？</div>
+</div>
+<div class="demolist">
+  <h3>jquery实现</h3>
+  <img src="chrome_logo_2x.png" alt="Chrome" width="123" height="40" id="logo-03" class="logo" >
+  <div class="desc">弃用animate();老老实实用css()</div>
+</div>
+
+
+<div class="demolist">
+  <h3>goolge的代码</h3>
+  <img src="chrome_logo_2x.png" alt="Chrome" width="123" height="40" id="logo-04" class="logo" >
+  <div class="desc">尚未偷出来</div>
+</div>
+<script>
+//不用库当然能实现，对比下面代码，有必要用库么？
+function maskanimation() {
+  var elem = document.getElementById("logo-02");   
+  var pos = 0;
+  var id = setInterval(maskanimateit, 15);
+  function maskanimateit() {
+    if (pos == 100) {
+      clearInterval(id);
+    } else {
+      pos++; 
+	   pos2= pos+15;
+      //elem.style.WebkitMaskImage = "-webkit-gradient(radial, 17 17, "+pos+", 17 17, "+pos2+", from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)))"; 
+	  elem.style['-webkit-mask-image'] = "-webkit-gradient(radial, 17 17, "+pos+", 17 17, "+pos2+", from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)))"; 
+     //此处是当然不用-webkit-mask-image，用style.WebkitMaskImage；好吧，这个地方我是瞎蒙对的，实际命名规则也是这样。
+	 //今天是2017-05-11
+    }
+  }
+}
+</script>
+
+
+
+<script>
+//jquery实现，但是有必要用么？
+$( "#logo-03" ).mouseenter(function() {
+	
+	 var pos = 0;
+  var id = setInterval(maskitanimation, 15);
+  function maskitanimation() {
+    if (pos == 100) {
+      clearInterval(id);
+    } else {
+      pos++;
+	  pos2= pos+15;
+	
+	  $("#logo-03" ).css( "-webkit-mask-image", "-webkit-gradient(radial, 17 17, "+pos+", 17 17, "+pos2+", from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)))" );
+ 
+	  
+    }
+  }
+
+  
+});
+</script>
+
+
+
+</body>
+</html>

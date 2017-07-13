@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>animate.css demo</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<style>
+.box{ width:250px; height:250px; float:left; border:1px solid #ccc; margin:3px; padding:25px; overflow:hidden;}
+
+</style>
+<script>
+
+$(document).ready(function(){
+	
+$(".box" ).hover(
+
+function() {
+
+$(this).find("div").addClass('animated infinite');
+ 
+},
+function() {
+
+$(this).find("div").removeClass('animated infinite');
+ 
+} 
+);
+  
+});
+
+
+
+
+
+</script>
+
+</head>
+
+<body>
+animate.css作者~<a href="https://daneden.me/">Daniel Eden</a>~<a href="http://daneden.github.io/animate.css">官方单个动画预览-戳我</a>~<a href="https://github.com/daneden/animate.css">Github-戳我</a>；下面是做个所有动画的同时预览。
+<h3>75个CSS动画一览,默认不播放，鼠标划过播放,没有密集恐惧症<a href="animate.css.html" target="_blank">点这里</a>同时预览全部</h3>
+
+
+
+<div class="box"><div class="bounce">bounce</div></div>
+<div class="box"><div class="flash">flash</div></div>
+<div class="box"><div class="pulse">pulse</div></div>
+<div class="box"><div class="rubberBand">rubberBand</div></div>
+<div class="box"><div class="shake">shake</div></div>
+<div class="box"><div class="headShake">headShake</div></div>
+<div class="box"><div class="swing">swing</div></div>
+<div class="box"><div class="tada">tada</div></div>
+<div class="box"><div class="wobble">wobble</div></div>
+<div class="box"><div class="jello">jello</div></div>
+<div class="box"><div class="bounceIn">bounceIn</div></div>
+<div class="box"><div class="bounceInDown">bounceInDown</div></div>
+<div class="box"><div class="bounceInLeft">bounceInLeft</div></div>
+<div class="box"><div class="bounceInRight">bounceInRight</div></div>
+<div class="box"><div class="bounceInUp">bounceInUp</div></div>
+<div class="box"><div class="bounceOut">bounceOut</div></div>
+<div class="box"><div class="bounceOutDown">bounceOutDown</div></div>
+<div class="box"><div class="bounceOutLeft">bounceOutLeft</div></div>
+<div class="box"><div class="bounceOutRight">bounceOutRight</div></div>
+<div class="box"><div class="bounceOutUp">bounceOutUp</div></div>
+<div class="box"><div class="fadeIn">fadeIn</div></div>
+<div class="box"><div class="fadeInDown">fadeInDown</div></div>
+<div class="box"><div class="fadeInDownBig">fadeInDownBig</div></div>
+<div class="box"><div class="fadeInLeft">fadeInLeft</div></div>
+<div class="box"><div class="fadeInLeftBig">fadeInLeftBig</div></div>
+<div class="box"><div class="fadeInRight">fadeInRight</div></div>
+<div class="box"><div class="fadeInRightBig">fadeInRightBig</div></div>
+<div class="box"><div class="fadeInUp">fadeInUp</div></div>
+<div class="box"><div class="fadeInUpBig">fadeInUpBig</div></div>
+<div class="box"><div class="fadeOut">fadeOut</div></div>
+<div class="box"><div class="fadeOutDown">fadeOutDown</div></div>
+<div class="box"><div class="fadeOutDownBig">fadeOutDownBig</div></div>
+<div class="box"><div class="fadeOutLeft">fadeOutLeft</div></div>
+<div class="box"><div class="fadeOutLeftBig">fadeOutLeftBig</div></div>
+<div class="box"><div class="fadeOutRight">fadeOutRight</div></div>
+<div class="box"><div class="fadeOutRightBig">fadeOutRightBig</div></div>
+<div class="box"><div class="fadeOutUp">fadeOutUp</div></div>
+<div class="box"><div class="fadeOutUpBig">fadeOutUpBig</div></div>
+<div class="box"><div class="flipInX">flipInX</div></div>
+<div class="box"><div class="flipInY">flipInY</div></div>
+<div class="box"><div class="flipOutX">flipOutX</div></div>
+<div class="box"><div class="flipOutY">flipOutY</div></div>
+<div class="box"><div class="lightSpeedIn">lightSpeedIn</div></div>
+<div class="box"><div class="lightSpeedOut">lightSpeedOut</div></div>
+<div class="box"><div class="rotateIn">rotateIn</div></div>
+<div class="box"><div class="rotateInDownLeft">rotateInDownLeft</div></div>
+<div class="box"><div class="rotateInDownRight">rotateInDownRight</div></div>
+<div class="box"><div class="rotateInUpLeft">rotateInUpLeft</div></div>
+<div class="box"><div class="rotateInUpRight">rotateInUpRight</div></div>
+<div class="box"><div class="rotateOut">rotateOut</div></div>
+<div class="box"><div class="rotateOutDownLeft">rotateOutDownLeft</div></div>
+<div class="box"><div class="rotateOutDownRight">rotateOutDownRight</div></div>
+<div class="box"><div class="rotateOutUpLeft">rotateOutUpLeft</div></div>
+<div class="box"><div class="rotateOutUpRight">rotateOutUpRight</div></div>
+<div class="box"><div class="hinge">hinge</div></div>
+<div class="box"><div class="rollIn">rollIn</div></div>
+<div class="box"><div class="rollOut">rollOut</div></div>
+<div class="box"><div class="zoomIn">zoomIn</div></div>
+<div class="box"><div class="zoomInDown">zoomInDown</div></div>
+<div class="box"><div class="zoomInLeft">zoomInLeft</div></div>
+<div class="box"><div class="zoomInRight">zoomInRight</div></div>
+<div class="box"><div class="zoomInUp">zoomInUp</div></div>
+<div class="box"><div class="zoomOut">zoomOut</div></div>
+<div class="box"><div class="zoomOutDown">zoomOutDown</div></div>
+<div class="box"><div class="zoomOutLeft">zoomOutLeft</div></div>
+<div class="box"><div class="zoomOutRight">zoomOutRight</div></div>
+<div class="box"><div class="zoomOutUp">zoomOutUp</div></div>
+<div class="box"><div class="slideInDown">slideInDown</div></div>
+<div class="box"><div class="slideInLeft">slideInLeft</div></div>
+<div class="box"><div class="slideInRight">slideInRight</div></div>
+<div class="box"><div class="slideInUp">slideInUp</div></div>
+<div class="box"><div class="slideOutDown">slideOutDown</div></div>
+<div class="box"><div class="slideOutLeft">slideOutLeft</div></div>
+<div class="box"><div class="slideOutRight">slideOutRight</div></div>
+<div class="box"><div class="slideOutUp">slideOutUp</div></div>
+
+
+</body>
+</html>
