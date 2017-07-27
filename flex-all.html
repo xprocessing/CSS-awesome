@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>flex</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        h3 {
+            width: 100%;
+            padding: 5px;
+            background-color: yellow;
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .flex-container-01 {
+            display: -webkit-flex;
+            display: flex;
+            width: 100%;
+            height: 250px;
+            background-color: #ccc;
+        }
+
+        .flex-lists-01-item {
+            background-color: #aeaeae;
+            width: 31.33%;
+            border: 5px solid #999;
+            box-sizing: border-box;
+            padding: 5px;
+            margin: 1%;
+            flex: auto;
+        }
+
+        .flex-container-02 {
+            display: -webkit-flex;
+            display: flex;
+            width: 100%;
+            height: 250px;
+            background-color: #ccc;
+        }
+
+        .flex-lists-02-item {
+            background-color: #aeaeae;
+            border: 5px solid #999;
+            box-sizing: border-box;
+            padding: 5px;
+            margin: 1%;
+        }
+
+        .flex-lists-02-item.item-01 {
+            flex: auto;
+        }
+
+        .flex-lists-02-item.item-02 {
+            flex: initial;
+            width: 200px;
+        }
+
+        .flex-lists-02-item.item-03 {
+            flex: none;
+            width: 100px;
+        }
+
+        .flex-container-03 {
+            display: -webkit-flex;
+            display: flex;
+            width: 100%;
+            height: 250px;
+            background-color: #ccc;
+        }
+
+        .flex-lists-03-item {
+            background-color: #aeaeae;
+            border: 5px solid #999;
+            box-sizing: border-box;
+            padding: 5px;
+            margin: 1%;
+        }
+
+        .flex-lists-03-item.item-01 {
+            flex: 2;
+        }
+
+        .flex-lists-03-item.item-02 {
+            flex: 5;
+        }
+
+        .flex-lists-03-item.item-03 {
+            flex: 3;
+        }
+
+        .flex-container-04 {
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+            height: 250px;
+            background-color: #ccc;
+        }
+
+        .flex-lists-04-item {
+            background-color: #aeaeae;
+            border: 5px solid #999;
+            box-sizing: border-box;
+            padding: 5px;
+            margin: 1%;
+        }
+
+        .flex-lists-04-item.item-01 {
+            flex: 3;
+        }
+
+        .flex-lists-04-item.item-02 {
+            flex: 6;
+        }
+
+        .flex-lists-04-item.item-03 {
+            flex: 9;
+            display: flex;
+            display: -webkit-flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+
+        .flex-lists-04-item.item-03 h3 {
+            width: 100%;
+            flex: none;
+            height: 50px;
+        }
+
+        .flex-lists-04-item.item-03 .flex-flex {
+            flex: 1;
+            background-color: #aeaeae;
+            border: 5px solid #999;
+            box-sizing: border-box;
+            padding: 5px;
+            margin: 1px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <h3>MDN的flex说明：：https://developer.mozilla.org/en-US/docs/Web/CSS/flex</h3>
+    <h3>重要属性：flex，flex-direction，align-content，align-items，justify-content order
+    </h3>
+    <div class="flex-container-01">
+        <div class="flex-lists-01-item">flex item不设置高度，默认等于flex容器高度</div>
+        <div class="flex-lists-01-item">不设置flex-direction，默认就是flex-direction: row;有横向，纵向，反横向，反纵向。row|row-reverse |column|column-reverse;
+        </div>
+        <div class="flex-lists-01-item">flex item 3</div>
+    </div>
+    <h3>flex里面item的几个属性：auto就是1：1自适应；initial就是最小适应，none就是不适应，N数字就是按比例 </h3>
+    <div class="flex-container-02">
+        <div class="flex-lists-02-item item-01">flex: auto</div>
+        <div class="flex-lists-02-item item-02">flex: initial;width:100px;这个最宽是100px，能自适应低于100px</div>
+        <div class="flex-lists-02-item item-03">flex: none;不会大小适应</div>
+    </div>
+    <h3>flex用N数字就是按比例，下列就是2：5：3 </h3>
+    <div class="flex-container-03">
+        <div class="flex-lists-03-item item-01">flex: 2;</div>
+        <div class="flex-lists-03-item item-02">flex: 5;</div>
+        <div class="flex-lists-03-item item-03">flex: 3;</div>
+    </div>
+    <h3>flex反横向</h3>
+    <div class="flex-container-04">
+        <div class="flex-lists-04-item item-01">1-flex: 3;</div>
+        <div class="flex-lists-04-item item-02">2-flex: 6;</div>
+        <div class="flex-lists-04-item item-03">
+            <h3>3-flex: 9;flex里面嵌套flex当然可以呀</h3>
+            <div class="flex-flex">flex-wrap: wrap</div>
+            <div class="flex-flex">2</div>
+            <div class="flex-flex">3</div>
+            <div class="flex-flex">4</div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
