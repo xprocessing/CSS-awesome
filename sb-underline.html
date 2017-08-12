@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>sb-underline 鼠标滑过，底部下划线动画</title>
+    <style>
+        a {
+            color: #333;
+            line-height: 2;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .sb-underline {
+            border-bottom: 2px solid #ccc;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .sb-underline::after,
+        .sb-underline::before {
+            content: '';
+            height: 2px;
+            left: 0;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+        }
+
+        .sb-underline::after {
+            background: currentColor;
+        }
+
+        .sb-underline::before {
+            background: blue;
+            -ms-transform: translateX(0);
+            transform: translateX(0);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1;
+        }
+
+        .sb-underline:active::before,
+        .sb-underline:focus::before,
+        .sb-underline:hover::before {
+            -ms-transform: translateX(100%);
+            transform: translateX(100%);
+        }
+
+
+        .sb-underline.is-active::after {
+            z-index: 2;
+        }
+
+        .sb-underline.is-active::before {
+            display: none;
+        }
+        .sb-underline-2:before {
+            background:#fff;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<h2>鼠标滑过，底部下划线动画</h2>
+<div>
+    <a href="#" class="sb-underline">News</a>
+    <a href="#" class="sb-underline">posts</a>
+    <a href="#" class="sb-underline">tweets</a>
+</div>
+<h2>实现思路</h2>
+<div>把sb-underline的a元素，设置底部border为2px；同时增加before和after伪元素也为2px，高度2px，底部对齐，上而下遮住sb-underline的2个像素border；自下而上依次为sb-underline，sb-underline::after；sb-underline::before，鼠标划过sb-underline::before，进行x轴100%移动，sb-underline::after就得以展示。如果把sb-underline::before设置为背景色，即可实现鼠标划过底线生出的动画。如下：</div>
+<h2>最终效果</h2>
+<div>
+    <a href="#" class="sb-underline sb-underline-2">News</a>
+    <a href="#" class="sb-underline sb-underline-2">posts</a>
+    <a href="#" class="sb-underline sb-underline-2">tweets</a>
+</div>
+<h3>2017-08-12，by neo</h3>
+</html>
